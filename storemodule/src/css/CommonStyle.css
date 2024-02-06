@@ -1,0 +1,244 @@
+ .mainLoginBackground{
+    height: 100vh;
+    background-image: linear-gradient(135deg, #667eeab9 0%, #764ba2ae 100%);
+    /* background-image: linear-gradient(to bottom, rgba(0,0,0,.9) 0%, #3308677e 100%); */
+ }
+.loginDiv{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.navbar-brand{
+    color:white!important;
+    font-weight: bold;
+    font-size: 2.2rem;
+}
+.welcomeText{
+    color:white!important;
+    font-weight: bold;
+    font-size: 3rem;
+    /* border-bottom: 8px solid white; */
+}
+.welcomeText::after{
+    content: "";
+    display: block;
+    border-bottom: 7px solid white;
+    width: 20%;
+    margin-bottom: 1rem;
+}
+.sloganText{
+    color: white;
+    font-size: 1rem;
+    width: 110%;
+}
+ .loginRow{
+    height: 33rem;
+    width: 70rem;
+    border-radius: 16px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background-size: cover;
+ }
+
+ .loginForm{
+    background-color: rgba(240, 248, 255, 0.447);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(30, 6, 81, 0.3);
+ }
+ .newUserText{
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 12%;
+ }
+ .password-toggle-register-icon{
+    position: absolute;
+    top: 79.9%;
+    right: 25px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: transparent;
+}
+
+.registerForm{
+    background-color: rgba(240, 248, 255, 0.447);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(30, 6, 81, 0.3);
+    width: 70%!important;
+}
+
+ .signupButton{
+    /* background-color: rgba(0, 0, 255, 0.705);
+    padding: .3rem 1.7rem;
+    color: white;
+    border-radius: 80px; */
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.801) 0%, #4f119b93 100%) ;
+    width: 30%;
+    /* border-radius: 5rem; */
+    color: white;
+    border: none;
+ }
+ .loginButton{
+    background-image:linear-gradient(to top, rgba(0,0,0,1) 0%, #330867c8 100%) ;
+    width: 100%;
+    border-radius: 5rem;
+    color: white;
+    border: none;
+ }
+ .password-toggle-icon {
+    position: absolute;
+    top: 58%;
+    right: 45px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .forgotPasswordText{
+    font-size: .9rem;
+    color:black!important;
+    text-decoration: none;
+    text-align: center;
+  }
+
+
+  .loginButton:hover, .signupButton:hover{
+    background-image:linear-gradient(to top, rgba(0, 0, 0, 0.952) 0%, #3a0c72bb 100%) ;
+    color: white;
+  }
+  
+
+
+
+  
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+    .mainLoginBackground{
+        height: 100vh;
+        background-image: linear-gradient(135deg, #667eeab9 0%, #764ba2ae 100%);
+        /* background-image: linear-gradient(to bottom, rgba(0,0,0,.9) 0%, #3308677e 100%); */
+     }
+     .loginDiv{
+        width: 90%;
+        top: 50%;
+    }
+    .navbar-brand{
+        font-size: 1.3rem;
+        width: 100%;
+    }
+    .welcomeText{
+        font-size: 2rem;
+        text-align: center;
+        /* border-bottom: 8px solid white; */
+    }
+    .welcomeText::after{
+        border-bottom: 5px solid white;
+        margin-left: 5rem;
+    }
+    .sloganText{
+        font-size: .8rem;
+        /* text-align: center; */
+        margin:0 ;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .loginRow{
+        height: 38rem;
+        border-radius: 16px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        background-size: cover;
+     }
+     .password-toggle-icon {
+        position: absolute;
+        right: 1rem;
+        top: 9.4rem;
+        transform: translateY(-50%);
+        cursor: pointer;
+        background: transparent;
+      }
+      .registerForm{
+        background-color: rgba(240, 248, 255, 0.447);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(30, 6, 81, 0.3);
+        width: 90%!important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .mainLoginBackground{
+        height: 100vh;
+        background-image: linear-gradient(135deg, #667eeab9 0%, #764ba2ae 100%);
+        /* background-image: linear-gradient(to bottom, rgba(0,0,0,.9) 0%, #3308677e 100%); */
+     }
+     .loginDiv{
+        width: 90%;
+        top: 50%;
+    }
+     
+    .navbar-brand{
+        font-size: 1rem;
+        width: 100%;
+    }
+    .welcomeText{
+        font-size: 2rem;
+        text-align: center;
+        /* border-bottom: 8px solid white; */
+    }
+    .welcomeText::after{
+        border-bottom: 5px solid white;
+        margin-left: 5rem;
+    }
+    .newUserText{
+        font-size: .8rem;
+        margin-top: 5%;
+        text-align: center;
+     }
+     .registerForm{
+        background-color: rgba(240, 248, 255, 0.447);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(30, 6, 81, 0.3);
+        width: 95%!important;
+    }
+     .signupButton{
+        width: 30%;
+        
+     }
+     .loginForm{
+        width: 100%;
+     }
+ 
+}
+
+@media only screen and (min-width: 992px) {
+    .mainLoginBackground{
+        height: 100vh;
+        background-image: linear-gradient(135deg, #667eeab9 0%, #764ba2ae 100%);
+        /* background-image: linear-gradient(to bottom, rgba(0,0,0,.9) 0%, #3308677e 100%); */
+     }
+     
+     
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and above) */
+@media only screen and (min-width: 1200px) {
+ 
+}
