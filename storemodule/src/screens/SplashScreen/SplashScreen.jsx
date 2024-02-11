@@ -19,7 +19,7 @@ function SplashScreen() {
                     </> :
                     <div className='logo'>
                         <img className='logo-img' src={AppAssets.MedicalPlusIcon} alt="" />
-                        <h1 className='logo-text'>Medical Finder</h1>
+                        <h1 className='logo-text'>Medical Store Finder</h1>
                     </div>
             }
         </div>

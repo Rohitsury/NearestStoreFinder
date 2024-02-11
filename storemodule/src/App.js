@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SplashScreen from "./screens/SplashScreen/SplashScreen";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen/RegisterScreen";
+import DashboardScreen from "./screens/DashboardScreen/DashboardScreen";
 function App() {
   const [showSplashScreen, setShowSplashScreen] = useState(true);
 
@@ -22,6 +23,10 @@ function App() {
         <Route
           path="/register"
           element={<RegisterScreen/>}
+        />
+        <Route
+          path="/dashboard"
+          element={<DashboardScreen/>}
         />
       </Routes>
     </BrowserRouter>
