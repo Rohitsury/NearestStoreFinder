@@ -199,8 +199,6 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Invalid Credentials" });
     } else {
       const token = await checkExistingUser.generateAuthToken(); //generating jwt token which will be store in browser localstorage and will be used for authorization purpose and storing in browser localstorage will by done by frontend and below we passing that token to frontend
-
-      console.log(token);
       return res
         .status(200)
         .json({ message: "Logged in successful", token: token });
@@ -232,6 +230,16 @@ router.post("/forgotpassword", async (req, res) => {
     return res.status(500).json(serverErrorMsg);
   }
 });
+
+router.get(
+  "/getStoreOwnerData",
+  AuthenticateUser(StoreRegistrationSchema),
+  restrictToOwnProfile(StoreRegistrationSchema),
+  async (req, res) => {
+    const profile = req.profile;
+    return res.status(200).json({ profile });
+  }
+);
 
 // we export the router because we are using it in index.js file
 module.exports = router;

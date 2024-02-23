@@ -1,0 +1,21 @@
+.formOuterDiv {
+    background-color: #0093E9;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    border-radius: 30px;
+    width: 42%;
+    padding: 2%;
+}
+
+.formDiv {
+    background-image: linear-gradient(310deg, #141727, #3a416f);
+    border-radius: 30px;
+    padding: 4%;
+}
+
+
+@media screen and (max-width: 768px) {
+    .formOuterDiv {
+       
+        width: 90%;
+    }
+}

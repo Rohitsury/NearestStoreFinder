@@ -20,6 +20,7 @@ const AuthenticateUser = (userSchema) => async (req, res, next) => {
     req.user = user;
     next();
   } catch (err) {
+    console.log(err);
     res.status(401).json({ success: false, message: "Authentication failed" });
   }
 };
@@ -27,7 +28,7 @@ const AuthenticateUser = (userSchema) => async (req, res, next) => {
 const restrictToOwnProfile = (userSchema) => async (req, res, next) => {
   try {
     const userId = req.user._id;
-    const profile = await userSchema.findOne({ user: userId });
+    const profile = await userSchema.findOne({ _id: userId });
     if (!profile) {
       throw new Error();
     }
