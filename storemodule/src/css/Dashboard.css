@@ -1,0 +1,342 @@
+.dashboard {
+    width: calc(100% - 100px);
+    padding: 20px;
+    padding-top: 30px;
+}
+
+.topContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topContainer .inputBox {
+    width: 350px;
+    height: 45px;
+    position: relative;
+}
+
+.topContainer .inputBox input {
+    width: 100%;
+    height: 100%;
+    background: #dbdbdf;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    color: black;
+    padding: 0px 40px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.topContainer .inputBox input::placeholder {
+    color: black;
+}
+
+.topContainer .inputBox i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: black;
+    font-size: 20px;
+    width: 40px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+}
+
+.profileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d0cfd4;
+    position: relative;
+}
+
+.profileContainer .profileIcon {
+    width: 40px;
+    height: 40px;
+    background: #19162c;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    font-size: 18px;
+    position: relative;
+
+}
+
+.profileContainer .profileIcon::before {
+    position: absolute;
+    content: "";
+    top: 5px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    background: #b1147d;
+    border-radius: 50%;
+}
+
+.profileContainer .profileImage {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 100%;
+    margin: 0px 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+
+.profileContainer .profileImage img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.profileContainer .profileName {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0px;
+}
+
+.profileContainer .menuChevron {
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0px 10px;
+}
+
+.profileContainer .menuChevron:hover {
+    transition: transform 0.5s ease;
+}
+
+.profileContainer .menuContainer {
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    background: white;
+    border-radius: 10px;
+    width: 180px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    /* transform: translateX(300px); */
+    transition: transform 0.3s cubic-bezier(0.17, 0.81, 0.38, 1.39);
+}
+
+.profileContainer .menuContainer:after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: white;
+    top: -5px;
+    right: 14px;
+    transform: rotate(45deg);
+}
+
+.profileContainer .menuContainer ul {
+    width: 100%;
+    height: 100%;
+}
+
+.profileContainer .menuContainer ul li {
+    list-style: none;
+    margin: 10px -15px;
+    width: 100%;
+    padding: 10px 10px;
+    cursor: pointer;
+    color: #757380;
+    text-align: left;
+}
+
+.profileContainer .menuContainer ul li:hover {
+    background: #121026;
+    transition: 0.3s;
+    width: 100%;
+    color: #f1f1f1;
+}
+
+.btn-gradUpdate {
+    background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+    padding: 5px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-gradUpdate:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+@media screen and (max-width: 525px) {
+    .container {
+        width: calc(100% - 68px);
+    }
+
+    .topContainer .inputBox {
+        width: 120px;
+        z-index: 101;
+    }
+
+    .topContainer .inputBox input:focus {
+        width: 320px;
+        transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+}
+
+.maincontainer {
+    width: 100%;
+    height: calc(100% - 45px);
+    display: flex;
+    padding-top: 15px;
+}
+
+.maincontainer .left {
+    width: calc(100% - 30%);
+    overflow-y: scroll;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.maincontainer .left::-webkit-scrollbar {
+    display: none;
+}
+
+
+.maincontainer .left .cards {
+    background-color: #19162c;
+
+    padding: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.maincontainer .left .cards .filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 30px;
+}
+
+.maincontainer .left .cards .filters .popular {
+    display: flex;
+    align-items: center;
+}
+
+.maincontainer .left .cards .filters .popular h2 {
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+    margin-right: 10px;
+}
+
+.maincontainer .left .cards .filters .filter_buttons {
+    display: flex;
+    align-items: center;
+}
+
+.maincontainer .left .cards main {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+
+.maincontainer .left .cards main .card_main .card_main_img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.maincontainer .left .cards main .card_main .card_main_name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+    margin-top: 10px;
+}
+
+
+
+.maincontainer .right {
+    width: calc(100% - 70%);
+    padding: 0px 10px;
+    padding-left: 20px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+@media screen and (max-width: 525px) {
+    .maincontainer {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .maincontainer .left {
+        width: 100%;
+    }
+
+    .maincontainer .left .cards main .card_main {
+        max-width: 325px;
+    }
+
+    .maincontainer .right {
+        width: 100%;
+        padding: unset;
+    }
+}
+
+.selectCat {
+    background-color: #19162c;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 525px) and (max-width: 950px) {
+    .maincontainer {
+        height: calc(100% - 25px);
+    }
+
+    .maincontainer .left {
+        width: calc(100% - 30%);
+    }
+
+    .maincontainer .right {
+        width: calc(100% - 60%);
+    }
+
+    .maincontainer .left .cards main .card_main {
+        max-width: 230px;
+        margin: 20px 5px;
+    }
+
+    .maincontainer .left .cards .filters {
+        padding: 0;
+    }
+
+    .maincontainer .right .topCard .earning {
+        padding: 0;
+    }
+
+    .maincontainer .right .bottom_card .topSeller .topSellerImg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .maincontainer .right .bottom_card .topSeller {
+        margin: 20px 0;
+    }
+
+    .maincontainer .right .bottom_card .topSeller .button {
+        font-size: 8px;
+    }
+}

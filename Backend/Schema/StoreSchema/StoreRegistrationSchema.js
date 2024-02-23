@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const GenerateToken = require("../../CustomFunction/token/GenerateToken");
-
+const jwt = require("jsonwebtoken");
 const StoreRegistrationSchema = new mongoose.Schema({
   storename: {
     type: String,
@@ -18,7 +17,7 @@ const StoreRegistrationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  area:{
+  area: {
     type: String,
     required: true,
   },
@@ -49,7 +48,8 @@ const StoreRegistrationSchema = new mongoose.Schema({
 
 StoreRegistrationSchema.methods.generateAuthToken = async function () {
   try {
-    let token = GenerateToken(this);
+    let token = jwt.sign({ _id: this._id }, process.env.SECRETE_KEY);
+    this.tokens = this.tokens.concat({ token: token });
     await this.save();
     return token;
   } catch (err) {

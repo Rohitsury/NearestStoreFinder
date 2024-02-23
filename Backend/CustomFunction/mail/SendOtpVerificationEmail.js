@@ -36,7 +36,6 @@ const SendOtpVerificationEmail = async (id, email) => {
       };
 
       await transporter.sendMail(mailOptions);
-      console.log("Verification otp email sent");
       resolve("Success");
     } catch (err) {
       console.log(err);
