@@ -1,1 +1,0 @@
-export const leftCol =  '${isToggle ? "col-1 toggleCol1 " : " col-3 left-col "}'

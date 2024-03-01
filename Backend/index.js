@@ -23,6 +23,8 @@ app.use(
   "/storemodule",
   require("./Routes/StoreRoutes/StoreRegistrationRoutes")
 );
+app.use("/storemodule", require("./Routes/StoreRoutes/StoreProductRoutes"));
+app.use("/storemodule", require("./Routes/StoreRoutes/StoreProfileRoutes"));
 
 // We have to use listen function in express to start the backend server in specific port number here we have used 5000 port number.
 app.listen(PORT, () => {

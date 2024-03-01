@@ -1,11 +1,9 @@
-import MedicalPlusIcon from '../Assets/MedicalPlusIcon.png';
-import LoginBackgroundImage from '../Assets/LoginBackgroundImg.jpg'
-import BackArrow from '../Assets/BackArrow.png';
-import AddMedicineIcon from '../Assets/AddMedicineIcon.png'
+import MedicalPlusIcon from "../Assets/MedicalPlusIcon.png";
+import LoginBackgroundImage from "../Assets/LoginBackgroundImg.jpg";
+import DefaultProfileIcon from "../Assets/DefaultProfileIcon.png";
 
 export const AppAssets = {
-    MedicalPlusIcon: MedicalPlusIcon,
-    LoginBackgroundImage: LoginBackgroundImage,
-    BackArrow: BackArrow,
-    AddMedicineIcon: AddMedicineIcon
-}
+  MedicalPlusIcon: MedicalPlusIcon,
+  LoginBackgroundImage: LoginBackgroundImage,
+  DefaultProfileIcon: DefaultProfileIcon,
+};

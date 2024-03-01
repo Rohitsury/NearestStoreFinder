@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import SplashScreen from "./screens/SplashScreen/SplashScreen";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen/RegisterScreen";
-import DashboardScreen from "./screens/DashboardScreen/DashboardScreen";
 import NotFoundPage from "./screens/PageNotFoundScreen/NotFoundPage";
 import MainScreen from "./screens/MainScreen";
 
@@ -18,13 +17,9 @@ function App() {
   };
 
   const ProtectedRoute = ({ element }) => {
-    useEffect(() => {
-      if (!isTokenValid()) {
-        window.location.href = "/";
-      }
-    }, []);
-    return isTokenValid() ? element : <Navigate to="/dashboard" />;
+    return isTokenValid() ? element : <Navigate to="/" />;
   };
+
   useEffect(() => {
     setTimeout(() => {
       setShowSplashScreen(false);
@@ -40,23 +35,12 @@ function App() {
         />
         <Route path="/register" element={<RegisterScreen />} />
         <Route
-          path="/*"
-          element={<ProtectedRoute element={<WithSidebar />} />}
+          path="/dashboard"
+          element={<ProtectedRoute element={<MainScreen />} />}
         />
-        <Route path="/notfound" element={<NotFoundPage />} />
+        <Route path="/*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
-  );
-}
-
-function WithSidebar() {
-  return (
-    <MainScreen>
-      <Routes>
-        <Route path="/dashboard" element={<DashboardScreen />} />
-        <Route path="*" element={<Navigate to="/notfound" replace />} />
-      </Routes>
-    </MainScreen>
   );
 }
 

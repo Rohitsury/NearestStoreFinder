@@ -28,11 +28,19 @@ const AuthenticateUser = (userSchema) => async (req, res, next) => {
 const restrictToOwnProfile = (userSchema) => async (req, res, next) => {
   try {
     const userId = req.user._id;
-    const profile = await userSchema.findOne({ _id: userId });
-    if (!profile) {
-      throw new Error();
+    if (userSchema.modelName === "STORE_REGISTRATION_DATA") {
+      const profile = await userSchema.findOne({ _id: userId });
+      req.profile = profile;
+      if (!profile) {
+        throw new Error();
+      }
+    } else if (userSchema.modelName === "PRODUCT") {
+      const medicineData = await userSchema.find({ user: userId });
+      req.medicineData = medicineData;
+      if (!medicineData) {
+        throw new Error();
+      }
     }
-    req.profile = profile;
     next();
   } catch (err) {
     res.status(403).json({ success: false, message: "Access denied" });

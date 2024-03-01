@@ -1,11 +1,13 @@
 import React from "react";
 import Sidebar from "../component/Navigation/Sidebar";
 import '../css/MainScreen.css';
-function MainScreen({children}) {
+import DashboardScreen from "./DashboardScreen/DashboardScreen";
+
+function MainScreen() {
   return (
     <div className="mainScreen">
       <Sidebar />
-      {children}
+      <DashboardScreen/>
     </div>
   );
 }
