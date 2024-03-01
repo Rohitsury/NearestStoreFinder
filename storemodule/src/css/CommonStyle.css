@@ -60,7 +60,7 @@
  .password-toggle-register-icon{
     position: absolute;
     top: 79.9%;
-    right: 25px;
+    left: 9.5rem;
     transform: translateY(-50%);
     cursor: pointer;
     background: transparent;
@@ -73,7 +73,7 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(30, 6, 81, 0.3);
-    width: 70%!important;
+    width: 80%!important;
 }
 
  .signupButton{

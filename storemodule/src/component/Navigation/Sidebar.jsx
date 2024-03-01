@@ -28,7 +28,6 @@ function Sidebar() {
           </NavLink>
         </li>
       </ul>
-
       <ul className="lastMenu">
         <li data-bs-toggle="tooltip" data-bs-placement="right" title="Logout">
           <FaSignOutAlt onClick={handleLogout} className="fs-3" />

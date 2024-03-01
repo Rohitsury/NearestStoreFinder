@@ -4,6 +4,8 @@ import { FaUserEdit } from "react-icons/fa";
 import { FaPhone, FaClock, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import ChangePasswordForm from "../Forms/ChangePasswordForm";
 import ProfileUpdateForm from "../Forms/ProfileUpdateForm";
+import { AppAssets } from "../../constant/AppAssets";
+
 function Profile() {
   const [showForm, setShowForm] = React.useState(false);
   const [storeOwnerData, setStoreOwnerData] = useState({});
@@ -24,7 +26,7 @@ function Profile() {
       );
       const data = await response.json();
       if (response.status === 200) {
-        setStoreOwnerData(data.profile);
+        setStoreOwnerData(data?.profile);
       }
     } catch (error) {
       console.log(error);
@@ -45,6 +47,7 @@ function Profile() {
           setStoreOwnerData={setStoreOwnerData}
           setShowPasswordForm={setShowPasswordForm}
           setShowForm={setShowForm}
+          getStoreOwnerData={getStoreOwnerData}
         />
       );
     }
@@ -95,11 +98,15 @@ function Profile() {
                                 }}
                               >
                                 <img
-                                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                                  src={
+                                    storeOwnerData?.storeImage
+                                      ? storeOwnerData?.storeImage
+                                      : AppAssets?.DefaultProfileIcon
+                                  }
                                   alt="Avatar"
                                   class="img-fluid my-5 profile-img"
                                 />
-                                <h5>{storeOwnerData.storename}</h5>
+                                <h5>{storeOwnerData?.storename}</h5>
                               </div>
                               <div className="col-md-8">
                                 <FaUserEdit
@@ -120,7 +127,7 @@ function Profile() {
                                         Email
                                       </h6>
                                       <p className="text-muted">
-                                        {storeOwnerData.email}
+                                        {storeOwnerData?.email}
                                       </p>
                                     </div>
                                     <div className="col-5 mb-3">
@@ -131,7 +138,7 @@ function Profile() {
                                         Phone
                                       </h6>
                                       <p className="text-muted">
-                                        {storeOwnerData.phone}
+                                        {storeOwnerData?.phone}
                                       </p>
                                     </div>
                                   </div>
@@ -181,4 +188,4 @@ function Profile() {
   );
 }
 
-export default React.memo(Profile);
+export default Profile;

@@ -3,7 +3,6 @@ import '../../css/CommonStyle.css'
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-
 import { useNavigate } from 'react-router-dom';
 
 function ForgotPasswordOtpModal({ setModal, userId, email }) {

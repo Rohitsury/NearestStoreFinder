@@ -4,16 +4,12 @@ const bcrypt = require("bcrypt");
 const StoreRegistrationSchema = require("../../Schema/StoreSchema/StoreRegistrationSchema");
 const UserOTPVerification = require("../../Schema/OtpSchema/OtpSchema");
 const SendOtpVerificationEmail = require("../../CustomFunction/mail/SendOtpVerificationEmail");
-const {
-  AuthenticateUser,
-  restrictToOwnProfile,
-} = require("../../CustomFunction/middleware/Authenticate");
 
 // initializing express.Router in router for backend routing
 const router = express.Router();
 
 const serverErrorMsg = {
-  message: "Something went wrong",
+  error: "Something went wrong",
 };
 
 // api for register
@@ -29,6 +25,7 @@ router.post("/register", async (req, res) => {
     storeStartTime,
     storeCloseTime,
     password,
+    storeImage,
   } = req.body;
   try {
     // here we hash (encrypt) the password using bcrypt.hash(password, salt)
@@ -57,6 +54,7 @@ router.post("/register", async (req, res) => {
             storeCloseTime,
             password: securedPassword,
             verified: false,
+            storeImage,
           },
         });
 
@@ -84,6 +82,7 @@ router.post("/register", async (req, res) => {
         storeCloseTime,
         password: securedPassword,
         verified: false,
+        storeImage,
       });
 
       // then we save the new user
@@ -231,15 +230,8 @@ router.post("/forgotpassword", async (req, res) => {
   }
 });
 
-router.get(
-  "/getStoreOwnerData",
-  AuthenticateUser(StoreRegistrationSchema),
-  restrictToOwnProfile(StoreRegistrationSchema),
-  async (req, res) => {
-    const profile = req.profile;
-    return res.status(200).json({ profile });
-  }
-);
+
+
 
 // we export the router because we are using it in index.js file
 module.exports = router;

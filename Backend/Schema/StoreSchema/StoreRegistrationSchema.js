@@ -36,12 +36,21 @@ const StoreRegistrationSchema = new mongoose.Schema({
   verified: {
     type: Boolean,
   },
+  storeImage: {
+    type: String,
+  },
   tokens: [
     {
       token: {
         type: String,
         required: true,
       },
+    },
+  ],
+  product: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "product",
     },
   ],
 });
