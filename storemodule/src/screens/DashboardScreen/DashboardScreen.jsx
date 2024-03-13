@@ -99,7 +99,7 @@ function DashboardScreen() {
           <div className="inputBox">
             <input
               type="text"
-              placeholder="Search items, collections"
+              placeholder="Search Medicine"
               onChange={handleSearch}
             />
             <i>
@@ -129,7 +129,7 @@ function DashboardScreen() {
           <div className="left">
             <div className="cards">
               <div className="filters">
-                <div className="popular">
+                <div className="dashboardTitle">
                   <h2>Medical Store Finder</h2>
                 </div>
                 <div className="text-white ms-auto me-3">

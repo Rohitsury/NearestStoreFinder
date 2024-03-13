@@ -40,7 +40,7 @@ router.post("/register", async (req, res) => {
       // then we check if the user is already verified or not (verified means email is verified or not)
       if (checkExistingUser.verified) {
         // if verified then we return user already exists message to frontend with status code of 400
-        return res.status(400).json({ message: "User already exists" });
+        return res.status(400).json({ error: "User already exists" });
       } else {
         // if not verified then we update the user details in the database
         const newUser = await StoreRegistrationSchema.updateOne({
@@ -111,7 +111,7 @@ router.post("/verifyotp", async (req, res) => {
 
     // if not present then we return error message to frontend
     if (!UserOTPVerificationRecord) {
-      return res.status(400).json({ message: "Please Resend Again" });
+      return res.status(400).json({ error: "Please Resend Again" });
     } else {
       //
       const { expiresAt, otp: hashedOtp } = UserOTPVerificationRecord;
@@ -127,7 +127,7 @@ router.post("/verifyotp", async (req, res) => {
       } else {
         const validOtp = await bcrypt.compare(otp, hashedOtp);
         if (!validOtp) {
-          return res.status(400).json({ message: "Invalid OTP" });
+          return res.status(400).json({ error: "Invalid OTP" });
         } else {
           if (password) {
             await StoreRegistrationSchema.updateOne(
@@ -185,7 +185,7 @@ router.post("/login", async (req, res) => {
 
     if (!checkExistingUser) {
       //means if existinguser is not present
-      return res.status(404).json({ message: "User does not exist" });
+      return res.status(404).json({ error: "User does not exist" });
     }
     // check entered password is correct or not
     const isPasswordMatched = await bcrypt.compare(
@@ -195,7 +195,7 @@ router.post("/login", async (req, res) => {
 
     if (!isPasswordMatched) {
       //means if password is not matched
-      return res.status(400).json({ message: "Invalid Credentials" });
+      return res.status(400).json({ error: "Invalid Credentials" });
     } else {
       const token = await checkExistingUser.generateAuthToken(); //generating jwt token which will be store in browser localstorage and will be used for authorization purpose and storing in browser localstorage will by done by frontend and below we passing that token to frontend
       return res

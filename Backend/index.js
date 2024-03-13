@@ -10,6 +10,8 @@ dotenv.config({ path: "./.env" });
 app.use(cors());
 // configuring dotenv file for environment variables means it will read the .env file for environment variables and store them in process.env object and it used for security purposes. because it is not recommended to use environment variables in production directly in code.
 
+
+
 database();
 // example of environment variable how you can use it or access it from .env file
 const PORT = process.env.PORT;

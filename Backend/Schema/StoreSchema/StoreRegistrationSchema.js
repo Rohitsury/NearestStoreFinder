@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
+
 const StoreRegistrationSchema = new mongoose.Schema({
   storename: {
     type: String,

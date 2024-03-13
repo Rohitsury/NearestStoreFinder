@@ -22,15 +22,14 @@ function ForgotPassword({ setModal }) {
         }
       );
       const res = await response.json();
-
       if (response.status === 200) {
         alert(res.message);
         setShowOTP(true);
         setUserId(res.userId);
       } else if (response.status === 404) {
-        alert(res.message);
+        alert(res.error);
       } else if (response.status === 500) {
-        alert(res.message);
+        alert(res.error);
       }
     } catch (err) {
       console.log(err);

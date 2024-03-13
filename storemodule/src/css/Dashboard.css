@@ -226,12 +226,12 @@
     padding: 5px 30px;
 }
 
-.maincontainer .left .cards .filters .popular {
+.maincontainer .left .cards .filters .dashboardTitle {
     display: flex;
     align-items: center;
 }
 
-.maincontainer .left .cards .filters .popular h2 {
+.maincontainer .left .cards .filters .dashboardTitle h2 {
     font-size: 20px;
     font-weight: 900;
     color: white;
@@ -245,7 +245,7 @@
 
 .maincontainer .left .cards main {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     gap: 25px;
