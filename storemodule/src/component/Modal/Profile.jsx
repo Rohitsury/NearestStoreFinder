@@ -101,7 +101,7 @@ function Profile() {
                                   src={
                                     storeOwnerData?.storeImage
                                       ? storeOwnerData?.storeImage
-                                      : AppAssets?.DefaultProfileIcon
+                                      : AppAssets?.defualtStoreImage
                                   }
                                   alt="Avatar"
                                   class="img-fluid my-5 profile-img"
