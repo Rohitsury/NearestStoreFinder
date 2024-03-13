@@ -15,7 +15,6 @@
     flex: 1; 
 }
 
-
 .accordionDiv {
     background-color: #362f5b;
 }
@@ -58,5 +57,10 @@
 .accordion-button:focus{
     box-shadow: none!important;
 }
-/* CSS */
  
+.notFoundImage{
+    filter: invert(100%);
+}
+ 
+.noMedicineFoundText{
+}

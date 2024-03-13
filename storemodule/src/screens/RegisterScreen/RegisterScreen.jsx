@@ -35,7 +35,12 @@ function RegisterScreen() {
     e.preventDefault();
     const phoneRegex = /^[6-9]\d{9}$/;
     const passwordRegex = /^.{8,16}$/;
+    const storeNameRegex = /[a-zA-Z]/;
 
+    if (!storeNameRegex.test(data?.storename)) {
+      alert("Please enter a valid store name");
+      return;
+    }
     if (!phoneRegex.test(data?.phone)) {
       alert("Please enter a valid phone number");
       return;

@@ -31,10 +31,10 @@ function ForgotPasswordOtpModal({ setModal, userId, email }) {
                 navigate('/')
             }
             else if (response.status === 400) {
-                alert(res.message)
+                alert(res.error)
             }
             else if (response.status === 500) {
-                alert(res.message)
+                alert(res.error)
             }
         } catch (err) {
             console.log(err)
@@ -56,7 +56,7 @@ function ForgotPasswordOtpModal({ setModal, userId, email }) {
                 alert(res.message);
             }
             else if (response.status === 500) {
-                alert(res.message);
+                alert(res.error);
             }
         }
         catch (err) {

@@ -1,7 +1,6 @@
 // import libraries
 const mongoose = require("mongoose");
 
-
 // Database connection
 // below DataBaseConnection function is used to connect with database
 const DataBaseConnection = async () => {
