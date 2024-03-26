@@ -1,0 +1,65 @@
+.loginRegScreen {
+    background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .8)), url('../assets/loginRegPageImage.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+.loginFormDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.loginFormDiv,
+.regFormDiv {
+    width: 30%;
+    background-color: rgba(255, 255, 255, .4);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+.regFormDiv {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.forgotPassword,
+.regLink {
+    color: blue;
+}
+.forgotPasswordToggleIcon{
+    position: absolute;
+    top: 51.4%;
+    right: 2rem;
+}
+.registerToggleIcon{
+    position: absolute;
+    top: 68.5%;
+    right: 3rem;
+}
+.loginToggleIcon{
+    position: absolute;
+    top: 49.6%;
+    right: 3rem;
+}
+.resetPasswordToggleIcon{
+    position: absolute;
+    top: 62.5%;
+    right: 3rem;
+}
+
+@media screen and (max-width: 600px) {
+    .loginFormDiv {
+        width: 90%;
+        margin-top: 10%;
+    }
+    .regFormDiv {
+        width: 90%;
+        margin-top: -15%;
+    }
+    .loginRegScreen {
+        background-position: left;
+    }
+
+}

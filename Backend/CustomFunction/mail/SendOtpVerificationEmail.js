@@ -19,6 +19,16 @@ const SendOtpVerificationEmail = async (id, email) => {
       const otp = `${Math.floor(1000 + Math.random() * 9000)}`;
       const hashedOTP = await bcrypt.hash(otp, 12);
 
+      const UserOTPVerificationRecord = await OTPVerificationSchema.findOne({
+        userId: id,
+      });
+
+      if (UserOTPVerificationRecord) {
+        await OTPVerificationSchema.deleteMany({
+          _id: UserOTPVerificationRecord._id,
+        });
+      }
+
       const newOTP = new OTPVerificationSchema({
         userId: id,
         otp: hashedOTP,

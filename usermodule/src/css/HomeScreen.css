@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.homeScreen {
+    background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .9)), url('../assets/mainPageImage.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.mainTitleDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.welcomeTitle {
+    font-size: 2.2rem;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.sloganText {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.searchButton {
+    border-radius: 50px;
+    color: white;
+    padding: 10px 50px;
+    border: 2px solid rgba(255, 255, 255, 0.983);
+    transition: .3s linear;
+    letter-spacing: 1px;
+}
+
+.searchButton:hover {
+    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.5);
+    color: black;
+    background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .welcomeTitle {
+        font-size: 1.5rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .sloganText {
+        font-size: 1rem;
+    }
+
+}
