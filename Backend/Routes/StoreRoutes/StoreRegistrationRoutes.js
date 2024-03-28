@@ -43,7 +43,7 @@ router.post("/register", async (req, res) => {
         return res.status(400).json({ error: "User already exists" });
       } else {
         // if not verified then we update the user details in the database
-        const newUser = await StoreRegistrationSchema.updateOne({
+        await StoreRegistrationSchema.updateOne({
           $set: {
             storename,
             email,
@@ -123,7 +123,7 @@ router.post("/verifyotp", async (req, res) => {
         });
         return res
           .status(400)
-          .json({ message: "OTP Expired. Please Resend Again" });
+          .json({ error: "OTP Expired. Please Resend Again" });
       } else {
         const validOtp = await bcrypt.compare(otp, hashedOtp);
         if (!validOtp) {

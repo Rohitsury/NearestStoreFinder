@@ -78,7 +78,9 @@ function RegisterScreen() {
       } else if (response.status === 500) {
         alert(res.error);
       }
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   }
   return (
     <>

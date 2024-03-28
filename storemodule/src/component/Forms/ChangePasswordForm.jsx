@@ -46,6 +46,7 @@ function ChangePassword({ setShowPasswordForm }) {
       console.log(error);
     }
   };
+  
   return (
     <div>
       <form className="profileUpdateForm p-4" onSubmit={resetPassword}>
